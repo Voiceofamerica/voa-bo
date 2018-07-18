@@ -1,5 +1,14 @@
 
+.loadGap {
+  display: flex;
+  flex-direction: row;
+  font-size: 5vw;
+  justify-content: center;
+  align-items: center;
+}
+
 .pullIcon {
+  font-size: 5vmax;
   display: inline-block;
   transform: rotate(0);
   transition: transform 0.3s;
