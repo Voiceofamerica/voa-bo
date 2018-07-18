@@ -19,11 +19,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 22px;
 
     .heading {
       font-weight: bold;
+      text-align: center;
       font-size: 28px;
+    }
+
+    div, p {
+      text-align: center;
     }
   }
 
