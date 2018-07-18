@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
-import TopNav, { TopNavItem, StaticItem, CenterText } from '@voiceofamerica/voa-shared/components/TopNav'
+import TopNav, { TopNavItem, StaticItem } from '@voiceofamerica/voa-shared/components/TopNav'
 import ThemeProvider from '@voiceofamerica/voa-shared/components/ThemeProvider'
 
 import analytics, { AnalyticsProps } from '@voiceofamerica/voa-shared/helpers/analyticsHelper'
@@ -13,7 +13,6 @@ import TopNavTheme from './TopNavTheme'
 import Params from './Params'
 import VideoPrograms from './VideoPrograms'
 import AudioPrograms from './AudioPrograms'
-import YouTube from './YouTube'
 import { programsScreen, programTypeNav, typeItem, active } from './ProgramsScreen.scss'
 
 type ProgramType = 'audio' | 'video'
