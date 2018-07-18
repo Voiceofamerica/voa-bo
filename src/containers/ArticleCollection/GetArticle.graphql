@@ -1,0 +1,16 @@
+
+query GetArticle($source: Audience!, $id: Int) {
+  content(source: $source, type: [], id: $id) {
+    id
+    title
+    pubDate
+    content
+    url
+    authors {
+      name {
+        first
+        last
+      }
+    }
+  }
+}

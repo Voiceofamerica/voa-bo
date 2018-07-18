@@ -1,0 +1,39 @@
+{
+  "lastModified": "2018-07-13T16:15:14.052Z",
+  "marketingCloud": {
+    "org": "518ABC7455E462B97F000101@AdobeOrg"
+  },
+  "target": {
+    "clientCode": "",
+    "timeout": 5
+  },
+  "audienceManager": {
+    "server": "",
+    "analyticsForwardingEnabled": false,
+    "timeout": 5
+  },
+  "acquisition": {
+    "server": "c00.adobe.com",
+    "appid": "cd59c8be103ba2f8ca76873764eb50b44c62c0d0c03ab1896fc03d644106353d"
+  },
+  "analytics": {
+    "rsids": "bbgvoa.tibet.streaming.app",
+    "server": "bbg.sc.omtrdc.net",
+    "ssl": false,
+    "offlineEnabled": true,
+    "charset": "UTF-8",
+    "lifecycleTimeout": 300,
+    "privacyDefault": "optedin",
+    "batchLimit": 0,
+    "timezone": "EDT",
+    "timezoneOffset": -240,
+    "referrerTimeout": 0,
+    "backdateSessionInfo": false,
+    "poi": []
+  },
+  "messages": [],
+  "remotes": {
+    "analytics.poi": "https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5b48cfb164746d1549000972.json",
+    "messages": "https://assets.adobedtm.com/b213090c5204bf94318f4ef0539a38b487d10368/scripts/satellite-5b48cfb164746d144100089b.json"
+  }
+}

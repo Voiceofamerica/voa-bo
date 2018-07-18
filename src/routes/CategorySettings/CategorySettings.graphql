@@ -1,0 +1,7 @@
+
+query CategorySettings($source: Audience!) {
+  zones(source: $source) {
+    id
+    name
+  }
+}

@@ -1,0 +1,111 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 10px;
+    transition: opacity 0.5s;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .panicButtonHolder {
+    .panicButton {
+      @include touchable();
+
+      background: $voa-red;
+      color: white;
+      padding: 0px 10px;
+      font-size: 17px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .panicButtonIcon {
+      padding: 5px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: $menu-height;
+
+    .disabled {
+      color: $voa-grey;
+    }
+
+    .settingsRow {
+      display: flex;
+      flex-direction: column;
+      font-size: 17px;
+      border-top: 5px solid $light-grey;
+      padding: 5px 10px;
+
+      .settingsRowHeader {
+        padding: 0px 6px;
+      }
+
+      .settingsValuesRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: $mid-grey;
+      }
+
+      .settingsItem {
+        padding: 0;
+      }
+
+      .active {
+        color: $voa-blue;
+      }
+    }
+
+    .aboutVoa {
+      font-size: 14px;
+      padding: 0px 6px;
+    }
+
+    .settingsButton {
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      font-size: 17px;
+      font-family: NotoSans;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      padding: 0 6px;
+      margin: 0;
+
+      &:active {
+        background: rgba($voa-blue, 0.5);
+      }
+    }
+  }
+}

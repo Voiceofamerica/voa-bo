@@ -1,0 +1,145 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.articleRoute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  color: $dark-grey;
+
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+
+  .heroImage {
+    background: $voa-red;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid $accent-green;
+  }
+
+  .heading {
+    margin: 20px 15px;
+
+    .byline {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .articleAuthors {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 2vw 0;
+    }
+
+    h2 {
+      font-size: 12px;
+      margin: 1vw 0;
+    }
+
+    h3 {
+      font-size: 12px;
+      margin: 1vw 0;
+    }
+  }
+
+  .contentIcon {
+    color: white;
+    font-size: 2.2em;
+    text-shadow: 0 0 0.2em #000;
+  }
+
+  .mediaButtonContainer {
+    position: absolute;
+    bottom: $menu-height;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+  }
+
+  .mediaButton {
+    $size: 40px;
+    $padding: 8px;
+    $margin: 10px;
+    @include touchable();
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $voa-blue;
+    height: $size;
+    width: $size;
+    color: white;
+    border-radius: $size / 2;
+    overflow: hidden;
+    margin-bottom: $margin;
+    margin-right: $margin;
+    opacity: 0.9;
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+
+  .mediaButtonIcon {
+    $size: 24px;
+    height: $size;
+    width: $size;
+  }
+
+  .articleText {
+    font-size: 1em;
+    margin: 15px;
+
+    .paragraph {
+      margin-bottom: 1em;
+    }
+  }
+
+  .centerIcon {
+    font-size: 1.4em;
+    margin-top: -0.1em;
+    margin-bottom: -0.1em;
+  }
+
+  .icon {
+    font-size: calc(#{$menu-font-size} * 2);
+    color: $mid-grey;
+  }
+
+  .iconActive {
+    color: $voa-blue;
+  }
+
+  .iconText {
+    font-size: 0.4em;
+    margin-top: -0.4em;
+  }
+
+  .relatedArticles {
+    flex: 1;
+
+    .relatedContentHeading {
+      display: inline-block;
+      padding: 4px;
+      border-radius: 4px;
+      background: $light-grey;
+      margin: 5px 10px;
+    }
+  }
+}

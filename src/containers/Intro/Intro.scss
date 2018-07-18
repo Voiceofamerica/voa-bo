@@ -1,0 +1,39 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.introRoute {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: $menu-z-max + 10;
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+
+    .heading {
+      font-weight: bold;
+      font-size: 28px;
+    }
+  }
+
+  .continueButton {
+    @include touchable();
+    background: $voa-blue;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 35px;
+    text-align: center;
+  }
+}

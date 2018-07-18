@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "declaration": false,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "lib": [
+      "es5",
+      "es2015",
+      "es2016",
+      "es2017",
+      "dom",
+      "esnext.asynciterable"
+    ],
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "baseUrl": "./src",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "containers/*": ["containers/*"],
+      "helpers/*": ["helpers/*"],
+      "redux-store/*": ["redux-store/*"],
+      "routes/*": ["routes/*"],
+      "graqhql-types": ["graqhql-types"],
+      "types/*": ["types/*"],
+      "svg/*": ["svg/*"],
+      "react": ["../node_modules/@types/react"],
+      "rxjs/*": ["../node_modules/rxjs/*"],
+      "rxjs": ["../node_modules/rxjs"]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

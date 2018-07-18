@@ -1,0 +1,16 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+$ios-padding: 20px;
+
+.app {
+  flex: 1;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

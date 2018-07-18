@@ -1,0 +1,84 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+$nav-drop: 100px;
+$button-rise: 15px;
+
+.bottomNav {
+  z-index: $menu-z-max + 1;
+  transition: bottom 0.3s;
+
+  .centerButton {
+    position: relative;
+    transition: top 0.5s;
+    top: 0;
+    overflow: hidden;
+
+    .backgroundImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 100px;
+      display: flex;
+      overflow: hidden;
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 100px;
+      }
+      
+      & ~ .centerIcon, & ~ .iconText {
+        color: white;
+        text-shadow: 0 0 0.2em #000;
+      }
+    }
+  }
+
+  .centerIcon {
+    font-size: calc(#{$menu-font-size} + 5px);
+    margin-top: -0.1em;
+    z-index: 1;
+    color: white; 
+  } 
+ 
+  .icon { 
+    font-size: calc(#{$menu-font-size} * 3); 
+    color: $mid-grey; 
+  } 
+   
+  .iconActive { 
+    color: $voa-blue; 
+  }
+
+  .iconText {
+    position: relative;
+    transition: top 0.3s, height 0.3s;
+    top: 0;
+    font-size: 0.4em;
+    margin-top: -0.4em;
+    height: 1em;
+  }
+
+  &.mediaIsOpen {
+    bottom: -$nav-drop;
+
+    .centerButton {
+      transition: top 0.3s;
+      top: -($nav-drop + $button-rise);
+    }
+
+    .iconText {
+      font-size: 0.4em;
+      margin-top: -0.4em;
+      top: $nav-drop + $button-rise;
+      height: 0.5em;
+    }
+  }
+}

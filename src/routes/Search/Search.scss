@@ -1,0 +1,115 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.searchScreen {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  .inputs {
+    height: $menu-height;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $border-grey;
+    background: white;
+
+    .backButton {
+      @include touchable();
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      width: 3em;
+    }
+
+    .inputsPill {
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 5px;
+      display: flex;
+      flex: 1;
+      background: $light-grey;
+    }
+
+    .dropdownPill {
+      position: relative;
+      display: flex;
+      width: 6em;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .dropdown {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 1em;
+        border: none;
+        padding: 0.3em;
+        outline: none;
+        background: $border-grey;
+      }
+
+      .dropdownArrow {
+        display: flex;
+        position: absolute;
+        justify-content: flex-end;
+        align-items: center;
+        pointer-events: none;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        font-size: 1.5em;
+        width: 2em;
+        background: linear-gradient(90deg, rgba($border-grey, 0), $border-grey 50%, $border-grey);
+
+        [dir="rtl"] & {
+          left: 0;
+          right: auto;
+          background: linear-gradient(-90deg, rgba($border-grey, 0), $border-grey 50%, $border-grey);
+        }
+      }
+    }
+
+    .searchInputContainer {
+      position: relative;
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .searchInput {
+      flex-grow: 1;
+      font-size: 1.2em;
+      background: $light-grey;
+      border: none;
+      padding: 0 0.5em;
+      outline: none;
+    }
+  }
+}
+
+.searchScreen > * {
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+.searchArea {
+  flex: 1;
+  display: flex;
+
+  .emptyText {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-content: flex-start;
+    font-size: 10vw;
+    padding-top: 100px;
+    transition: color 0.3s;
+  }
+}

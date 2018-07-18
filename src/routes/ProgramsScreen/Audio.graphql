@@ -1,0 +1,15 @@
+query ProgramAudio($source: Audience!, $zone: Int) {
+  content(source: $source, type: [Article], zoneId: $zone) {
+    id
+    pubDate
+    image {
+      tiny
+      hero
+    }
+    audio {
+      url
+      audioTitle
+      audioDescription
+    }
+  }
+}

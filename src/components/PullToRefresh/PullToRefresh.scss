@@ -1,0 +1,10 @@
+
+.pullIcon {
+  display: inline-block;
+  transform: rotate(0);
+  transition: transform 0.3s;
+
+  &.upsideDown {
+    transform: rotate(-180deg);
+  }
+}

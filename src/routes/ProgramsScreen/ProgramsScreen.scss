@@ -1,0 +1,61 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.programsScreen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+
+  .programContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+
+    .emptyContent {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+
+  .programTypeNav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+
+    .typeItem {
+      @include touchable();
+
+      flex: 1;
+      font-size: 16px;
+      padding: 6px;
+      text-align: center;
+      border: 1px solid $voa-blue;
+      background: white;
+      color: $voa-blue;
+
+      &.active {
+        color: white;
+        background: $voa-blue;
+      }
+    }
+  }
+}
+
+#ytp {
+  width: 100%;
+  max-height: 40%;
+}

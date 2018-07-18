@@ -1,0 +1,16 @@
+query ProgramGalleries($source: Audience!) {
+  content(source: $source, type: [PhotoGallery]) {
+    id
+    title
+    introduction
+    pubDate
+    photoGallery {
+      photo {
+        id
+      }
+    }
+    image {
+      tiny
+    }
+  }
+}

@@ -1,0 +1,51 @@
+
+query ArticleRoute($source: Audience!, $id: Int) {
+  content(source: $source, type: [], id: $id) {
+    id
+    title
+    pubDate
+    lastUpdated
+    url
+    content
+    authors {
+      name {
+        first
+        last
+      }
+    }
+    image {
+      tiny
+      hero
+    }
+    video {
+      url
+      thumbnailTiny
+      videoDescription
+    }
+    audio {
+      url
+      audioTitle
+      audioDescription
+    }
+    photoGallery {
+      id
+      photoGalleryTitle
+      photoGalleryDescription
+      photo {
+        id
+        photoTitle
+        photoDescription
+        tiny
+        hero
+        order
+      }
+    }
+    relatedStories {
+      id
+      storyTitle
+      thumbnailTiny
+      pubDate
+    }
+    type
+  }
+}

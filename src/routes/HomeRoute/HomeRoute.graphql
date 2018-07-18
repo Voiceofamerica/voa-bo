@@ -1,0 +1,25 @@
+query HomeRoute($source: Audience!) {
+  content(source: $source, type: [PhotoGallery, Article, Clip], topNews: true) {
+    id
+    title
+    introduction
+    pubDate
+    image {
+      tiny
+      thumb
+      hero
+    }
+    video {
+      url
+      relType
+    }
+    audio {
+      url
+    }
+    photoGallery {
+      photo {
+        id
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.icon {
+  font-size: calc(#{$menu-font-size} * 2);
+  color: $mid-grey;
+}
+
+.iconActive {
+  color: $voa-blue;
+}
+
+.iconText {
+  color: $dark-grey;
+}

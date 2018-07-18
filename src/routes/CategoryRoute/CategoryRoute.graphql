@@ -1,0 +1,24 @@
+query CategoryRoute($source: Audience!, $category: Int) {
+  content(source: $source, zoneId: $category, type: [Article, Video, PhotoGallery, Clip]) {
+    id
+    title
+    introduction
+    pubDate
+    image {
+      tiny
+      thumb
+      hero
+    }
+    video {
+      url
+    }
+    audio {
+      url
+    }
+    photoGallery {
+      photo {
+        id
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+query ProgramVideos($source: Audience!, $zone: Int) {
+  content(source: $source, type: [Video], zoneId: $zone) {
+    id
+    pubDate
+    video {
+      url
+      thumbnailTiny
+      videoTitle
+      videoDescription
+    }
+  }
+}

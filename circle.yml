@@ -1,0 +1,101 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: "node:6.11.1"
+    steps:
+      - checkout
+      - restore_cache: &cacheTestKey
+          key: v4-voa-bo-cordova-npm-{{ checksum "package-lock.json" }}
+      - run: yarn global add npm@5
+      - run: npm install
+      - save_cache:
+          <<: *cacheTestKey
+          paths:
+            - "~/.npm"
+            - "node_modules"
+      - run: npm run check
+
+  build_android:
+    docker:
+      - image: bitriseio/docker-android
+    steps:
+      - checkout
+      - restore_cache: &cacheAndroidNpmKey
+          key: v1-voa-bo-cordova-android-{{ checksum "package-lock.json" }}
+      - restore_cache: &cacheAndroidCordovaKey
+          key: v1-voa-bo-cordova-android-{{ checksum "config.xml" }}
+      - run: bash scripts/setupAndroid.sh
+      - run: npm install
+      - save_cache:
+          <<: *cacheAndroidNpmKey
+          paths:
+            - "~/.npm"
+            - "node_modules"
+      - run: npx cordova prepare android
+      - run: npm run copy:assets:android
+      - save_cache:
+          <<: *cacheAndroidCordovaKey
+          paths:
+            - "~/.android"
+            - "plugins"
+            - "platforms"
+      - run: unzip -o -P "$PROTECTED_PASS" protected.zip
+      - run: NODE_ENV='production' npm run build:webpack
+      - run: bash scripts/buildAndroid.sh
+      - store_artifacts:
+          path: platforms/android/build/outputs/apk/debug/android-local.apk
+          destination: local.apk
+      - store_artifacts:
+          path: platforms/android/build/outputs/apk/debug/android-debug.apk
+          destination: debug.apk
+      - store_artifacts:
+          path: platforms/android/build/outputs/apk/release/android-release.apk
+          destination: release.apk
+
+  build_ios:
+    machine: true
+    environment:
+      NODE_VERSION: 6.11.1
+    steps:
+      - checkout
+      - restore_cache: &cacheIosKey
+          key: v3-voa-bo-cordova-ios-{{ checksum "package-lock.json" }}-{{ checksum "config.xml" }}
+      - run: bash scripts/setupiOS.sh
+      - run: npm install
+      - run: npm run cordova:prepare
+      - run: npm run generate
+      - save_cache:
+          <<: *cacheIosKey
+          paths:
+            - "~/.npm"
+            - "node_modules"
+            - "node_modules"
+            - "plugins"
+            - "platforms"
+      - run: unzip -o -P "$PROTECTED_PASS" protected.zip
+      - run: NODE_ENV='production' npm run build:webpack
+      - run: bash scripts/buildiOS.sh
+      - store_artifacts:
+          path: builds/local/voa-cordova.ipa
+          destination: local.ipa
+      - store_artifacts:
+          path: builds/debug/voa-cordova.ipa
+          destination: debug.ipa
+      - store_artifacts:
+          path: builds/release/voa-cordova.ipa
+          destination: release.ipa
+
+workflows:
+  version: 2
+  test_and_build:
+    jobs:
+      - test
+      - build_android:
+          filters:
+            branches:
+              only: master
+      #- build_ios:
+      #    filters:
+      #      branches:
+      #        only: master

@@ -1,0 +1,32 @@
+
+@import "'~@voiceofamerica/voa-shared/commonStyles/index";
+
+.favoriteSettings {
+  display: flex;
+  flex-direction: column;
+
+  .removeAllContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    padding-top: 10px;
+
+    .removeAllButton {
+      @include touchable();
+
+      background: $voa-red;
+      color: white;
+      padding: 0px 10px;
+      font-size: 17px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .icon {
+    font-size: calc(#{$menu-font-size} * 2);
+    color: $mid-grey;
+  }
+}
