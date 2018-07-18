@@ -6,6 +6,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "setup": "run-s setup:*",
+    "setup:ios": "cordova prepare ios & cordova prepare ios & cordova prepare ios & npm run copy:assets:ios",
+    "setup:android": "cordova prepare android & cordova prepare android & cordova prepare android & npm run copy:assets:android",
     "start:web": "NODE_ENV='host' webpack-dev-server --hot",
     "start:ios": "run-s build:webpack run:ios",
     "prestart:android": "./scripts/avd.js --wait",
@@ -105,7 +108,7 @@
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.1",
     "postcss-loader": "^2.1.3",
-    "psiphon-cordova-plugin": "^0.9.0",
+    "psiphon-cordova-plugin": "^0.9.1",
     "react": "^16.3.2",
     "react-apollo": "^2.1.0",
     "react-dnd": "^2.5.4",
