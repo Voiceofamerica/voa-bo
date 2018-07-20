@@ -165,7 +165,7 @@ class ArticleRouteBase extends React.Component<Props, State> {
 
     return (
       <div style={{ fontWeight: 'bold' }}>
-        {articleLabels.updatedOn(updated.format('lll'))}
+        {articleLabels.updatedOn(/*updated.format('lll')*/)}
       </div>
     )
   }
