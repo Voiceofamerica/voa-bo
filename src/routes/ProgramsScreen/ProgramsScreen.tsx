@@ -26,12 +26,80 @@ const VIDEO_ZONES: Category[] = [
     id: 0,
     name: 'ལེ་ཚན་ཚང་མ།',
   },
+  {
+    id: 2642,
+    name: 'ཀུན་གླེང་།',
+  },
+  {
+    id: 2643,
+    name: 'ཀུན་གླེང་གསར་འགྱུར།',
+  },
+  {
+    id: 2644,
+    name: 'དྲ་སྣང་གི་བོད།',
+  },
+  {
+    id: 3380,
+    name: 'ཁ་བའི་མི་སྣ།',
+  },
+  {
+    id: 2887,
+    name: 'ཀུན་གླེང་གསར་ཤོས།',
+  },
 ]
 
 const AUDIO_ZONES: Category[] = [
   {
     id: 0,
     name: 'ལེ་ཚན་ཚང་མ།',
+  },
+  {
+    id: 2623,
+    name: 'སྔ་དྲོའི་གསར་འགྱུར།',
+  },
+  {
+    id: 2650,
+    name: 'ཉིན་གུང་གི་གསར་འགྱུར།',
+  },
+  {
+    id: 4006,
+    name: 'བོད་པའི་གནད་དོན།',
+  },
+  {
+    id: 2651,
+    name: 'དགོང་དྲོའི་གསར་འགྱུར།',
+  },
+  {
+    id: 2624,
+    name: 'ཆོས་རིག་ལེ་ཚན།',
+  },
+  {
+    id: 2684,
+    name: 'བགྲོ་གླེང་མདུན་ལྕོག',
+  },
+  {
+    id: 2685,
+    name: 'གཞོན་སྐྱེས་དང་ཤེས་ཡོན།',
+  },
+  {
+    id: 2652,
+    name: 'ཕ་ཡུལ་གླེང་སྟེགས།',
+  },
+  {
+    id: 2641,
+    name: 'འཕྲོད་བསྟེན་དང་དོན་ལྡན་གྱི་མི་ཚེ།',
+  },
+  {
+    id: 2649,
+    name: 'གངས་རིའི་བྲག་ཅ།',
+  },
+  {
+    id: 2648,
+    name: 'སོ་ཡ་ལ། བོད་ཀྱི་དེང་རབས་གླུ་གཞས།',
+  },
+  {
+    id: 2686,
+    name: 'མི་ལོ་ལྔ་བཅུའི་དྲན་ཐོ།།',
   },
 ]
 
@@ -41,13 +109,13 @@ interface Props extends RouteComponentProps<Params>, AnalyticsProps {
 class ProgramsScreen extends React.Component<Props> {
   setProgramType = (programType: ProgramType) => {
     const { history, match } = this.props
-    const { zone } = match.params
+    const { type } = match.params
 
-    if (zone) {
-      history.replace(`/programs/${programType}/${zone}`)
-    } else {
-      history.replace(`/programs/${programType}`)
+    if (type === programType) {
+      return
     }
+
+    history.replace(`/programs/${programType}`)
   }
 
   setZoneId = (zoneId: number) => {
