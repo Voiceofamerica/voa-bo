@@ -1,6 +1,6 @@
 {
   "name": "com.voanews.voabo",
-  "displayName": "VOATibet",
+  "displayName": "VOATibetan",
   "version": "1.0.0",
   "description": "Voice of America Mobile for Tibetan Audiences",
   "main": "index.js",
@@ -29,7 +29,7 @@
     "build:clean": "rimraf plugins && rimraf platforms",
     "build:full": "run-s -c cordova:prepare cordova:prepare cordova:prepare copy:assets build",
     "copy:assets": "run-p copy:assets:*",
-    "copy:assets:ios": "rsync -rv ./assets/ios/Images.xcassets/ \"./platforms/ios/VOATibet/Images.xcassets/\"",
+    "copy:assets:ios": "rsync -rv ./assets/ios/Images.xcassets/ \"./platforms/ios/VOATibetan/Images.xcassets/\"",
     "copy:assets:android": "rsync -rv ./assets/android/res/ ./platforms/android/res/",
     "build:android:clean": "rimraf platforms && npm run build:webpack && cordova prepare android &&& npm run copy:assets:android && cordova build android",
     "build:android": "npm run build:webpack && cordova build android",
