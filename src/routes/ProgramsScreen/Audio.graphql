@@ -1,15 +1,14 @@
-query ProgramAudio($source: Audience!, $zone: Int) {
-  content(source: $source, type: [Article], zoneId: $zone) {
+query ProgramAudio($source: Audience!, $category: Int) {
+  audioProgram(source: $source, zoneId: $category) {
     id
-    pubDate
+    date
+    zone
     image {
       tiny
       hero
     }
-    audio {
-      url
-      audioTitle
-      audioDescription
-    }
+    url
+    programTitle
+    programDescription
   }
 }

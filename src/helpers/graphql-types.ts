@@ -214,22 +214,21 @@ export type HomeRouteQuery = {
 
 export type ProgramAudioQueryVariables = {
   source: Audience,
-  zone?: number | null,
+  category?: number | null,
 };
 
 export type ProgramAudioQuery = {
-  content:  Array< {
+  audioProgram:  Array< {
     id: number,
-    pubDate: string,
+    date: string | null,
+    zone: number | null,
     image:  {
       tiny: string,
       hero: string,
     } | null,
-    audio:  {
-      url: string | null,
-      audioTitle: string | null,
-      audioDescription: string | null,
-    } | null,
+    url: string | null,
+    programTitle: string | null,
+    programDescription: string | null,
   } | null > | null,
 };
 
