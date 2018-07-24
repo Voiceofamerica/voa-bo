@@ -52,6 +52,22 @@ const actors: ActorMap<AppSettings> = {
 
 export const INITIAL_STATE: AppSettings = {
   categories: [
+    {
+      id: 2253,
+      name: 'བོད།',
+    },
+    {
+      id: 2244,
+      name: 'རྒྱ་ནག',
+    },
+    {
+      id: 2252,
+      name: 'ཨ་རི།',
+    },
+    {
+      id: 2254,
+      name: 'འཛམ་གླིང་།',
+    },
   ],
   mediaPlaybackRate: 1,
   dailyNotificationOn: true,
