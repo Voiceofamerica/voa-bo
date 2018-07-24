@@ -29,11 +29,9 @@ export default class App extends React.Component<{}, State> {
   componentDidMount () {
     deviceIsReady.then(() => {
       const splash = (navigator as any).splashscreen
-      if (splash) {
-        splash.hide()
-      } else {
-        console.warn('could not hide splashscreen')
-      }
+      splash.hide()
+    }).catch(err => {
+      console.warn('could not hide splashscreen', err)
     })
 
     renderReady
