@@ -1,0 +1,37 @@
+
+.psiphonLoading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10vmin;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    font-size: 8vmin;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 0 10px;
+
+    .bold {
+      font-weight: bold;
+    }
+
+    div, p {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  .spinner {
+    height: 30vmin;
+    width: 30vmin;
+    font-size: 30vmin;
+  }
+}
