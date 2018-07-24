@@ -16,7 +16,7 @@ export default class PsiphonLoading extends React.Component<Props> {
     return (
       <ThemeConsumer>
         {(theme) => (
-          <div className={psiphonLoading} style={{ color: theme.blue, background: theme.grey }}>
+          <div className={psiphonLoading} style={{ color: theme.blue, background: theme.lightGrey }}>
             <div className={text}>
               <div className={bold}>
                 {psiphonLoadingLabels.bold}
