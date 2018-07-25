@@ -13,10 +13,10 @@ import { Audience } from 'helpers/graphql-types'
 setAnalyticsOptions({
   language: 'tibetan',
   languageService: 'tibetan',
-  propertyName: 'tibetan',
+  propertyName: 'voa tibetan news app',
   propertyId: 'something',
-  rsidAccount: 'something',
-  reportSuite: 'something',
+  rsidAccount: 'bbgvoa.tibetan.streaming.app',
+  reportSuite: 'bbgvoa.tibetan.streaming.app',
 })
 setDirection('ltr')
 
