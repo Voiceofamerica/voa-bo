@@ -66,7 +66,7 @@
     "@types/webpack-env": "^1.13.2",
     "@voiceofamerica/cordova-plugin-music-controls": "^3.0.5",
     "@voiceofamerica/voa-core-shared": "^1.58.0",
-    "@voiceofamerica/voa-shared": "^2.4.4",
+    "@voiceofamerica/voa-shared": "^2.4.6",
     "adobe-mobile-services": "^4.13.1-cor",
     "android-versions": "^1.2.1",
     "apollo-cache-inmemory": "^1.1.11",
