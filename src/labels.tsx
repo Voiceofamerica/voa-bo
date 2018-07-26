@@ -14,7 +14,7 @@ setAnalyticsOptions({
   language: 'tibetan',
   languageService: 'tibetan',
   propertyName: 'voa tibetan news app',
-  propertyId: 'something',
+  propertyId: '353',
   rsidAccount: 'bbgvoa.tibetan.streaming.app',
   reportSuite: 'bbgvoa.tibetan.streaming.app',
 })
