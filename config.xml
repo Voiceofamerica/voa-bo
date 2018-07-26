@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="100010" id="com.voanews.voabo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name short="ཨ་རིའི་རླུང་འཕྲིན།">VOATibetan</name>
+    <name short="རླུང་འཕྲིན།">VOATibetan</name>
     <description>
         The Voice of America (VOA) publishes accurate, balanced, and comprehensive news and information to an international audience.
     </description>

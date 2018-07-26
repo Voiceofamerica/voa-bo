@@ -37,35 +37,33 @@ export const categorySettingsLabels = {
   allCategories: 'དཀར་ཆག་ཁ་ཚང་།',
   dragAndDrop: 'ཁྱེད་ཀྱི་དཀར་ཆག་འདིར་ཞོགས།',
   headlinesFirst: 'འགོ་བརྗོད་དང་པོར་འགོད་པ།',
-  cancel: 'Cancel',
+  cancel: 'བྲིས་སུབ།',
 }
 
 export const circumventionDrawerLabels = {
   enabledContent: (
     <div>
       <p>
-      བཀོལ་ཆས་འདི་ནི་བདེ་འཇགས་ལྡན་ཞིང་གསང་རྒྱ་དམ་པོ་ཡིན།
+      འབྲེལ་ཐག་འདི་གསང་བ་དང་སུ་ཡིན་མི་ཤེས།
       </p>
       <p>
-        You can change this in
         <a href='#' onClick={() => {
           store.dispatch(push('/settings'))
           store.dispatch(toggleCircumventionDrawer({ open: false }))
-        }}>Settings</a>.
+        }}>ཁྱེད་རང་གིས་སྦར་ཟུམ་བཀོད་སྒྲིག་བྱེད་ཆོག</a>.
       </p>
     </div>
   ),
   disabledContent: (
     <div>
       <p>
-      བཀོལ་ཆས་འདི་ནི་བདེ་འཇགས་ལྡན་ཞིང་གསང་རྒྱ་དམ་པོ་ཡིན།
+      བདེ་འཇགས་མཉེན་ཆས་ཁ་རྒྱོབ།
       </p>
       <p>
-        You can change this in
         <a href='#' onClick={() => {
           store.dispatch(push('/settings'))
           store.dispatch(toggleCircumventionDrawer({ open: false }))
-        }}>Settings</a>.
+        }}>ཁྱེད་རང་གིས་སྦར་ཟུམ་བཀོད་སྒྲིག་བྱེད་ཆོག</a>.
       </p>
     </div>
   ),
@@ -87,12 +85,12 @@ export const favoritesSettingsLabels = {
 
 export const homeLabels = {
   headlines: 'གསར་འགྱུར་འགོ་བརྗོད།',
-  search: 'Search',
+  search: 'འཚོལ་ཞིབ།',
   manage: '+',
 }
 
 export const introLabels = {
-  content: 'བོད་སྐད་བརྙན་འཕྲིན་དང་རླུང་འཕྲིན།',
+  content: 'ཨ་རིའི་རླུང་འཕྲིན་ཁང་གི་གསར་འགྱུར་ཕབ་ལེན་བྱས་པར་བཀའ་དྲིན་ཆེ། ང་ཚོར་ཁྱེད་རང་གི་བསམ་ཚུལ་བཏང་ནས་བཀོལ་ཆས་འདིར་ལེགས་བཅོས་གནང་བར་ཞུ།',
   continue: 'སྒུག',
 }
 
@@ -115,14 +113,14 @@ export const mediaSettingsLabels = {
 }
 
 export const programsScreenLabels = {
-  videos: 'པར་རིས།',
-  audio: 'མོས་པའི་སྒྲ།',
+  videos: 'བརྙན་འཕྲིན',
+  audio: 'རླུང་འཕྲིན།',
   empty: 'ད་ལྟའི་ཆར་མེད།',
 }
 
 export const psiphonLoadingLabels = {
-  bold: 'Please be patient.',
-  text: 'This may take a few minutes while we gather the best information for you.',
+  bold: '',
+  text: 'ང་ཚོས་སྐུ་ཉིད་ལ་མཁོ་ངེས་ཀྱི་གནས་ཚུལ་རྣམས་བསྡུ་རུབ་བྱེད་བཞིན་ཡོད།',
 }
 
 export const pullToRefreshLabels = {
@@ -148,11 +146,11 @@ export const settingsLabels = {
   feedbackSubject: encodeURIComponent('ཨ་རིའི་རླུང་འཕྲིན་བཀོལ་ཆས་ཀྱི་དགེ་སྐྱོན།'),
   feedbackBody: encodeURIComponent(''),
   shareMessage: 'བཀོལ་ཆས་འདི་ག་འདྲ་ཡོད་པ་གཟིགས་དང་།',
-  psiphon: 'Secure VPN',
-  psiphonOn: 'On',
-  psiphonOff: 'Off',
-  takeEffectOnRestart: 'You must restart the app for your changes to take effect.',
-  okay: 'Okay',
+  psiphon: 'བཀོལ་ཆས་བཀོད་སྒྲིག',
+  psiphonOn: 'ཁ་ཕྱེ།',
+  psiphonOff: 'ཁ་རྒྱབ།',
+  takeEffectOnRestart: 'བཅོས་སྒྲིག་ཟིན་རྗེས་བཀོལ་ཆས་ཟུམ་ནས་བསྐྱར་དུ་སྦོར།',
+  okay: 'ངེས་གཏན།',
 }
 
 export const textSettingsLabels = {
