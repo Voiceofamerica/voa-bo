@@ -1,5 +1,18 @@
 {
   schema: {
     files: 'node_modules/@voiceofamerica/voa-core-shared/lib/graphql/**/*.graphql'
-  }
+  },
+  query: {
+     files: [ /* define file paths which you'd like the gql parser to watch and give autocomplete suggestions for */
+       {
+         match: 'src/**/*.{ts,tsx}', // for js
+         parser: ['EmbeddedQueryParser', { startTag: 'gql`', endTag: '`' }],
+         isRelay: true,
+       },
+       {
+         match: 'src/**/*.graphql',
+         parser: 'QueryParser',
+       },
+     ],
+   }
 }

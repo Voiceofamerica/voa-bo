@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="100010" id="com.voanews.voabo" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="AndroidFullScreen">
+        <param name="android-package" value="com.mesmotronic.plugins.FullScreenPlugin" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+    <feature name="PDFService">
+        <param name="android-package" value="com.pdf.generator.PDFGenerator" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="MusicControls">
+        <param name="android-package" value="com.voa.musiccontrols.MusicControls" />
+    </feature>
+    <feature name="ADBMobile_PhoneGap">
+        <param name="android-package" onload="true" value="com.adobe.ADBMobile_PhoneGap" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Psiphon">
+        <param name="android-package" value="ca.psiphon.plugin.Psiphon" />
+        <param name="onload" value="true" />
+    </feature>
+    <name short="ཨ་རིའི་རླུང་འཕྲིན།">VOATibetan</name>
+    <description>
+        The Voice of America (VOA) publishes accurate, balanced, and comprehensive news and information to an international audience.
+    </description>
+    <author email="ttsering@voanews.com" href="https://www.voanews.com/">
+        Voice of America
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="https://*youtube.com/*" />
+    <allow-intent href="market:*" />
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" />
+    </edit-config>
+    <resource-file src="assets/android/res/mipmap-anydpi-v26/ic_launcher.xml" target="res/mipmap-anydpi-v26/ic_launcher.xml" />
+    <resource-file src="assets/android/res/mipmap-anydpi-v26/ic_launcher_round.xml" target="res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+    <resource-file src="assets/android/res/mipmap-hdpi/ic_launcher.png" target="res/mipmap-hdpi/ic_launcher.png" />
+    <resource-file src="assets/android/res/mipmap-hdpi/ic_launcher_round.png" target="res/mipmap-hdpi/ic_launcher_round.png" />
+    <resource-file src="assets/android/res/mipmap-mdpi/ic_launcher.png" target="res/mipmap-mdpi/ic_launcher.png" />
+    <resource-file src="assets/android/res/mipmap-mdpi/ic_launcher_round.png" target="res/mipmap-mdpi/ic_launcher_round.png" />
+    <resource-file src="assets/android/res/mipmap-xhdpi/ic_launcher.png" target="res/mipmap-xhdpi/ic_launcher.png" />
+    <resource-file src="assets/android/res/mipmap-xhdpi/ic_launcher_round.png" target="res/mipmap-xhdpi/ic_launcher_round.png" />
+    <resource-file src="assets/android/res/mipmap-xxhdpi/ic_launcher.png" target="res/mipmap-xxhdpi/ic_launcher.png" />
+    <resource-file src="assets/android/res/mipmap-xxhdpi/ic_launcher_round.png" target="res/mipmap-xxhdpi/ic_launcher_round.png" />
+    <resource-file src="assets/android/res/mipmap-xxxhdpi/ic_launcher.png" target="res/mipmap-xxxhdpi/ic_launcher.png" />
+    <resource-file src="assets/android/res/mipmap-xxxhdpi/ic_launcher_round.png" target="res/mipmap-xxxhdpi/ic_launcher_round.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="SplashScreenDelay" value="50" />
+    <preference name="FadeSplashScreenDuration" value="50" />
+</widget>
