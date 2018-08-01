@@ -1,11 +1,5 @@
 set -euo pipefail
 
-pushd platforms/android
-  ./gradlew cdvPrintProps
-  echo "\n\n\n>> project.properties >>"
-  cat project.properties
-popd
-
 echo "Building Android Local App"
 NODE_ENV=development cordova build android -- --keystore="./build.keystore" --storePassword="$STORE_PASSWORD" --alias="voa-bo" --password="$ALIAS_PASSWORD" --target local
 mv platforms/android/build/outputs/apk/debug/android-debug.apk platforms/android/build/outputs/apk/debug/android-local.apk
