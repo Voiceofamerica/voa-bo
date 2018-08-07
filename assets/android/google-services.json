@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "240913753196",
+    "firebase_url": "https://voa-admin-dashboard.firebaseio.com",
+    "project_id": "voa-admin-dashboard",
+    "storage_bucket": "voa-admin-dashboard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240913753196:android:141ef30356b680c5",
+        "android_client_info": {
+          "package_name": "com.voanews.voabo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240913753196-kninc2t545p4vnr6c10b7ddknuavdqg9.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "240913753196-kninc2t545p4vnr6c10b7ddknuavdqg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcWzZwr4mawFJbTb3V4GAOYC9qkBfUUeU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

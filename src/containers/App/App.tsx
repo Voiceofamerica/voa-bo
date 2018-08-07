@@ -2,6 +2,14 @@
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import { ApolloProvider } from 'react-apollo'
+import { push } from 'react-router-redux'
+
+import { showControls } from '@voiceofamerica/voa-shared/helpers/mediaControlHelper'
+import { setPsiphonConfig, start } from '@voiceofamerica/voa-shared/helpers/psiphonHelper'
+import { deviceIsReady } from '@voiceofamerica/voa-shared/helpers/cordovaHelper'
+import { initializeNotifications, coldStartSubject, notificationSubject } from '@voiceofamerica/voa-shared/helpers/pushNotificationHelper'
+import setNotificationStatus from '@voiceofamerica/voa-shared/redux/actions/setNotificationStatus'
+import NotificationToast from '@voiceofamerica/voa-shared/components/NotificationToast'
 
 import store, { renderReady } from 'redux-store'
 import PsiphonLoading from 'components/PsiphonLoading'
@@ -11,9 +19,7 @@ import MediaPlayer from 'containers/MediaPlayer'
 import CircumventionDrawer from 'containers/CircumventionDrawer'
 import Intro from 'containers/Intro'
 import client from 'helpers/graphql-client'
-import { showControls } from '@voiceofamerica/voa-shared/helpers/mediaControlHelper'
-import { setPsiphonConfig, start } from '@voiceofamerica/voa-shared/helpers/psiphonHelper'
-import { deviceIsReady } from '@voiceofamerica/voa-shared/helpers/cordovaHelper'
+import { defaultAppTopic } from 'labels'
 
 import { app } from './App.scss'
 
@@ -37,6 +43,25 @@ export default class App extends React.Component<{}, State> {
     renderReady
       .then(() => {
         const appState = store.getState()
+
+        initializeNotifications(defaultAppTopic)
+          .subscribe(status => {
+            if (status.initialized && status.subscriptions.length > 0) {
+              store.dispatch(setNotificationStatus({ shouldGetPushNotifications: true }))
+            }
+          })
+
+        notificationSubject.subscribe(notification => {
+          console.log('notification', notification)
+        })
+
+        coldStartSubject.subscribe(notification => {
+          console.log('coldStart', notification)
+          if (notification.additionalData.articleId) {
+            this.goToArticle(notification.additionalData.articleId)
+          }
+        })
+
         console.log('psiphon enabled?', appState.settings.psiphonEnabled)
         if (appState.settings.psiphonEnabled) {
           setPsiphonConfig(require('../../psiphon_config.json'))
@@ -76,6 +101,7 @@ export default class App extends React.Component<{}, State> {
           {appReady ? (
             <div key='app' className={app}>
               <Intro />
+              <NotificationToast goToArticle={this.goToArticle} />
               <PsiphonIndicator />
               <Router />
               <MediaPlayer />
@@ -83,13 +109,16 @@ export default class App extends React.Component<{}, State> {
             </div>
           ) : (
             <div key='app' className={app}>
-              <Intro />
               <PsiphonLoading />
             </div>
           )}
         </Provider>
       </ApolloProvider>
     )
+  }
+
+  private goToArticle = (articleId: string) => {
+    store.dispatch(push(`/article/${articleId}`))
   }
 
   private ready = () => {
