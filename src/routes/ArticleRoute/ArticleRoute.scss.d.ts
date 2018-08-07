@@ -1,4 +1,5 @@
 export const articleRoute: string;
+export const backButton: string;
 export const container: string;
 export const heroImage: string;
 export const heading: string;

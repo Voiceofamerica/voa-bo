@@ -3,11 +3,13 @@ import * as React from 'react'
 import { compose } from 'redux'
 import { connect, Dispatch } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
+import { push } from 'react-router-redux'
 
 import { graphql, ChildProps, QueryOpts } from 'react-apollo'
 import * as moment from 'moment'
 
 import { fromRelatedArticleList } from '@voiceofamerica/voa-shared/helpers/itemListHelper'
+import { isIos } from '@voiceofamerica/voa-shared/helpers/platformHelper'
 import PhotoGallery from '@voiceofamerica/voa-shared/components/PhotoGallery'
 import { StaticTicketList } from '@voiceofamerica/voa-shared/components/TicketList'
 import ResilientImage from '@voiceofamerica/voa-shared/components/ResilientImage'
@@ -43,6 +45,7 @@ import {
   icon,
   iconActive,
   heroImage,
+  backButton,
 } from './ArticleRoute.scss'
 import * as Query from './ArticleRoute.graphql'
 
@@ -58,6 +61,7 @@ interface StateProps {
 interface DispatchProps {
   playMedia: (url: string, title: string, description: string, isVideo: boolean, imageUrl?: string) => void
   toggleFavorite: (favorite?: boolean) => void
+  goHome: () => void
 }
 
 type BaseProps = RouteComponentProps<Params>
@@ -93,15 +97,15 @@ class ArticleRouteBase extends React.Component<Props, State> {
   }
 
   renderBottomNav () {
-    const { history, isFavorite } = this.props
+    const { isFavorite, goHome } = this.props
 
     const favoriteIconClass = isFavorite ? `${icon} ${iconActive}` : icon
 
     return (
       <MainBottomNav
         left={[
-          <IconItem key={0} onClick={() => history.goBack()}>
-            <SvgIcon src='back' className={icon} />
+          <IconItem key={0} onClick={goHome}>
+            <SvgIcon src='home' className={icon} />
           </IconItem>,
           <IconItem key={1} onClick={this.share}>
             <SvgIcon src='share' className={icon} />
@@ -116,6 +120,19 @@ class ArticleRouteBase extends React.Component<Props, State> {
           </IconItem>,
         ]}
       />
+    )
+  }
+
+  renderBackButton () {
+    if (!isIos()) {
+      return null
+    }
+
+    const { history } = this.props
+    return (
+      <div className={backButton} onClick={() => history.goBack()}>
+        <SvgIcon src='chevronDown' style={{ transform: 'rotate(90deg)' }} />
+      </div>
     )
   }
 
@@ -276,6 +293,7 @@ class ArticleRouteBase extends React.Component<Props, State> {
 
     return (
       <div className={articleRoute} style={{ fontSize: `${textSize}em` }}>
+        {this.renderBackButton()}
         <Loader data={this.props.data}>
           <ErrorBoundary>
             { this.renderArticle() }
@@ -440,6 +458,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: OwnProps): Dispat
       const { id, title, content, pubDate } = ownProps.data.content[0]
       dispatch(toggleFavoriteContent({ id, title, content, pubDate, favorite }))
     },
+    goHome: () => dispatch(push('/')),
   }
 }
 

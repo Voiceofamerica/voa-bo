@@ -11,6 +11,27 @@
   flex-direction: column;
   color: $dark-grey;
 
+  .backButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: $black;
+    color: $white;
+    width: calc(#{$menu-height} - 20px);
+    height: calc(#{$menu-height} - 20px);
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(#{$menu-height} - 35px);
+
+    * {
+      position: relative;
+      left: -1px;
+    }
+  }
+
   .container {
     flex: 1;
     display: flex;

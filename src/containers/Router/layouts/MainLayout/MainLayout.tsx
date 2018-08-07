@@ -14,7 +14,7 @@ import Category from 'types/Category'
 
 import { homeLabels } from 'labels'
 
-import { layout } from '../layout.scss'
+import { layout, manageButton } from '../layout.scss'
 
 interface StateProps {
   categories: Category[]
@@ -43,7 +43,6 @@ function MainLayout ({ component: Component, categories, ...rest }: Props) {
       return (
         <div className={layout}>
           <TopNav flex>
-            <StaticItem />
             <TopNavItem selected={isHeadlines} onClick={() => replace('/')}>
               {homeLabels.headlines}
             </TopNavItem>
@@ -54,9 +53,12 @@ function MainLayout ({ component: Component, categories, ...rest }: Props) {
                 </TopNavItem>
               ))
             }
-            <StaticItem onClick={() => goTo('/settings/categories')}>
-              {homeLabels.manage}
-            </StaticItem>
+            <TopNavItem style={{ fontSize: '1.3em', fontWeight: 'bold' }} onClick={() => goTo('/settings/categories')}>
+              <div className={manageButton}>
+                {homeLabels.manage}
+              </div>
+            </TopNavItem>
+            <StaticItem />
           </TopNav>
 
           <div className={layout}>
