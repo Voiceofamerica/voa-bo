@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: &cacheTestKey
-          key: v4-voa-bo-cordova-npm-{{ checksum "package-lock.json" }}
+          key: v1.1-voa-bo-cordova-npm-{{ checksum "package-lock.json" }}
       - run: yarn global add npm@5
       - run: npm install
       - save_cache:
@@ -22,9 +22,9 @@ jobs:
     steps:
       - checkout
       - restore_cache: &cacheAndroidNpmKey
-          key: v1-voa-bo-cordova-android-{{ checksum "package-lock.json" }}
+          key: v1.1-voa-bo-cordova-android-{{ checksum "package-lock.json" }}
       - restore_cache: &cacheAndroidCordovaKey
-          key: v1-voa-bo-cordova-android-{{ checksum "config.xml" }}
+          key: v1.1-voa-bo-cordova-android-{{ checksum "config.xml" }}
       - run: bash scripts/setupAndroid.sh
       - run: npm install
       - save_cache:
@@ -60,7 +60,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: &cacheIosKey
-          key: v3-voa-bo-cordova-ios-{{ checksum "package-lock.json" }}-{{ checksum "config.xml" }}
+          key: v1.1-voa-bo-cordova-ios-{{ checksum "package-lock.json" }}-{{ checksum "config.xml" }}
       - run: bash scripts/setupiOS.sh
       - run: npm install
       - run: npm run cordova:prepare

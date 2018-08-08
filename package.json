@@ -6,8 +6,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "setup": "cordova prepare && cordova prepare && cordova prepare && npm run copy:assets",
-    "setup:ios": "cordova prepare ios && cordova prepare ios && cordova prepare ios && npm run copy:assets:ios",
+    "setup": "cordova prepare && cordova prepare && npm run setup:cocoapods && cordova prepare && npm run copy:assets",
+    "setup:cocoapods": "cd platforms/ios; pod install",
+    "setup:ios": "cordova prepare ios && cordova prepare ios && npm run pod:install && cordova prepare ios && npm run copy:assets:ios",
     "setup:android": "cordova prepare android && cordova prepare android && cordova prepare android && npm run copy:assets:android",
     "start:web": "NODE_ENV='host' webpack-dev-server --hot",
     "start:ios": "run-s build:webpack run:ios",
